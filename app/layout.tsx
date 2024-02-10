@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type { ReactNode } from "react";
+import { Poppins } from "next/font/google";
 import "./globals.css";
+import "remixicon/fonts/remixicon.css";
+import NextThemeProvider from "@/hoc/NextThemeProvider";
 
-const inter = Inter({ subsets: ["latin"] });
+const font = Poppins({ subsets: ["latin"], weight: ["400", "600", "700"] });
 
 export const metadata: Metadata = {
 	title: "Adrian Bieniek - web developer",
@@ -13,11 +16,13 @@ export const metadata: Metadata = {
 export default function RootLayout({
 	children,
 }: Readonly<{
-	children: React.ReactNode;
+	children: ReactNode;
 }>) {
 	return (
 		<html lang="pl">
-			<body className={inter.className}>{children}</body>
+			<body className={`${font.className} bg-light text-dark/80 dark:bg-dark dark:text-light`}>
+				<NextThemeProvider>{children}</NextThemeProvider>
+			</body>
 		</html>
 	);
 }
