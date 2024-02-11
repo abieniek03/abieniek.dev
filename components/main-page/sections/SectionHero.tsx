@@ -24,8 +24,9 @@ export default function SectionHero(): ReactElement {
         <p className="mb-4 md:text-lg lg:mb-8">
           Na codzień zajmuję się web developerem. Studiuję informatykę.
           W&nbsp;wolnym czasie rozwijam się, a także dzielę się swoją wiedzą i
-          doświadczeniem. Prowadzę bloga i kanał na YouTube.
+          doświadczeniem.
         </p>
+        {/* //Prowadzę bloga i kanał na YouTube. */}
         <div className="flex flex-col gap-3 md:flex-row">
           <a
             href="#kontakt"

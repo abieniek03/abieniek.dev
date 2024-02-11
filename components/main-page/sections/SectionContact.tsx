@@ -134,9 +134,11 @@ export default function SectionContact(): ReactElement {
             <FormField type="email" id="email" label="Adres mailowy" />
             <FormField id="subject" label="Temat" />
             <FormField type="textarea" id="message" label="Wiadomość" />
-            <Button type="primary" fullWidth={true}>
-              Wyślij wiadmość
-            </Button>
+            <div className="mt-5">
+              <Button type="primary" fullWidth={true}>
+                Wyślij wiadmość
+              </Button>
+            </div>
           </form>
         </FormProvider>
       </div>
