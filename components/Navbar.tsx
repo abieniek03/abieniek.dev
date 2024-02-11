@@ -2,6 +2,7 @@
 
 import { type ReactElement, type FC, useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, useScroll, useSpring } from "framer-motion";
 
 import Logo from "./Logo";
@@ -45,6 +46,8 @@ const ScrollBar: FC = () => {
 };
 
 export default function Navbar(): ReactElement {
+  const pathname = usePathname();
+
   const [navbarFixed, setNavbarFixed] = useState<boolean>(false);
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
 
@@ -69,8 +72,16 @@ export default function Navbar(): ReactElement {
       <nav
         className={`fixed w-full ${navbarFixed && !menuIsOpen ? "bg-light/95 backdrop-blur supports-[backdrop-filter]:bg-light/75 dark:bg-dark/95 dark:supports-[backdrop-filter]:bg-dark/75" : ""} ${menuIsOpen ? "bg-light dark:bg-dark" : ""}`}
       >
-        <div className="mx-auto flex w-full max-w-screen-2xl flex-wrap items-center justify-between px-4 py-3 md:flex-nowrap">
-          <Logo />
+        <div className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between px-4 py-3 md:flex-nowrap">
+          {pathname === "/" ? (
+            <a href="#">
+              <Logo />
+            </a>
+          ) : (
+            <Link href="/">
+              <Logo />
+            </Link>
+          )}
           <div
             className={`${
               menuIsOpen ? "flex" : "hidden"

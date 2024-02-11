@@ -8,7 +8,7 @@ export default function MainPageLayout({
   return (
     <>
       <Navbar />
-      <div className="mx-auto max-w-screen-2xl p-8 lg:py-0">{children}</div>
+      <div className="mx-auto max-w-7xl p-8 lg:py-0">{children}</div>
     </>
   );
 }
