@@ -107,7 +107,7 @@ export default function SectionContact(): ReactElement {
   };
 
   return (
-    <SectionContainer>
+    <SectionContainer id="kontakt">
       <SectionTitle>Skontaktuj się ze mną</SectionTitle>
       <p className="text-center">
         Napisz bezpośrednio na{" "}

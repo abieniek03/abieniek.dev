@@ -3,11 +3,19 @@
 import { type ReactElement, type ReactNode } from "react";
 import { motion } from "framer-motion";
 
+interface ISectionContainer {
+  children: ReactNode;
+  id?: string;
+}
+
 export default function SectionContainer({
+  id,
   children,
-}: Readonly<{ children: ReactNode }>): ReactElement {
+}: Readonly<ISectionContainer>): ReactElement {
   return (
     <motion.section
+      id={id}
+      className="scroll-mt-24"
       initial={{ opacity: 0, y: 150 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{

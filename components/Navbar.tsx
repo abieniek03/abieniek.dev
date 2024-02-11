@@ -99,6 +99,7 @@ export default function Navbar(): ReactElement {
                 <li
                   key={index}
                   className="cursor-pointer py-2 font-semibold hover:text-primary md:py-0 md:text-sm"
+                  onClick={() => menuIsOpen && setMenuIsOpen(false)}
                 >
                   {el.path[0] === "#" ? (
                     <Link href={el.path}>{el.label}</Link>
