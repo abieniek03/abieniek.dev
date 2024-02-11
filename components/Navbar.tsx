@@ -1,10 +1,11 @@
 "use client";
 
 import { useState, type ReactElement } from "react";
-import Logo from "./Logo";
-import { stylesNavbarLinkButton } from "@/app/styles";
-import SwitchThemeButton from "./SwitchThemeButton";
 import Link from "next/link";
+
+import Logo from "./Logo";
+import SwitchThemeButton from "./SwitchThemeButton";
+import { stylesNavbarLinkButton } from "@/app/styles";
 interface INavItems {
   path: string;
   label: string;
