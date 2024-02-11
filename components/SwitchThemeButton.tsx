@@ -22,11 +22,10 @@ export default function SwitchThemeButton() {
   };
 
   return (
-    <button
-      onClick={switchTheme}
-      className={`${stylesNavbarLinkButton} text-xl`}
-    >
-      <i className={theme === "dark" ? "ri-moon-clear-line" : "ri-sun-line"} />
+    <button onClick={switchTheme} className={`${stylesNavbarLinkButton}`}>
+      <i
+        className={`${theme === "dark" ? "ri-sun-line" : "ri-moon-clear-line"} px-0.5 text-xl`}
+      />
     </button>
   );
 }

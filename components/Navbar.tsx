@@ -30,18 +30,18 @@ export default function Navbar(): ReactElement {
 
   return (
     <nav>
-      <div className="mx-auto flex w-full max-w-screen-2xl flex-wrap items-center justify-between p-3 px-4 md:flex-nowrap">
+      <div className="mx-auto flex w-full max-w-screen-2xl flex-wrap items-center justify-between px-4 py-3 md:flex-nowrap">
         <Logo />
         <div
           className={`${
             menuIsOpen ? "flex" : "hidden"
-          } order-last mt-2 h-[calc(100vh-60px)] w-full items-center justify-center border-t dark:border-light/10 md:order-none md:flex md:h-auto md:border-none`}
+          } order-last mt-2 h-[calc(100vh-60px)] w-full items-center justify-center border-t dark:border-light/10 md:order-none md:mt-0 md:flex md:h-auto md:border-none`}
         >
           <ul className="mt-2 flex h-full w-full flex-col gap-2 md:mt-0 md:flex-row md:justify-center md:gap-5">
             {navItems.map((el, index) => (
               <li
                 key={index}
-                className="cursor-pointer py-2 font-semibold hover:text-primary md:font-normal"
+                className="cursor-pointer py-2 font-semibold hover:text-primary md:py-0 md:text-sm"
               >
                 {el.path[0] === "#" ? (
                   <Link href={el.path}>{el.label}</Link>
@@ -55,7 +55,7 @@ export default function Navbar(): ReactElement {
         <div className="flex items-center justify-end">
           <div className="flex gap-3">
             <div className="flex flex-row-reverse">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1">
                 <a
                   href="https://www.linkedin.com/in/adrian-bieniek/"
                   rel="noopener"
@@ -74,7 +74,7 @@ export default function Navbar(): ReactElement {
                 </a>
                 <SwitchThemeButton />
                 <button
-                  className={`${stylesNavbarLinkButton} "group text-2xl" md:hidden`}
+                  className={`${stylesNavbarLinkButton} ml-1 md:hidden ${menuIsOpen ? "shadow-inner" : ""}`}
                   onClick={() => setMenuIsOpen(!menuIsOpen)}
                 >
                   <i
