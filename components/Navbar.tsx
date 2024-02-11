@@ -69,7 +69,14 @@ export default function Navbar(): ReactElement {
   return (
     <>
       <ScrollBar />
-      <nav
+      <motion.nav
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{
+          type: "spring",
+          stiffness: 80,
+          damping: 20,
+        }}
         className={`fixed w-full ${navbarFixed && !menuIsOpen ? "bg-light/95 backdrop-blur supports-[backdrop-filter]:bg-light/75 dark:bg-dark/95 dark:supports-[backdrop-filter]:bg-dark/75" : ""} ${menuIsOpen ? "bg-light dark:bg-dark" : ""}`}
       >
         <div className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between px-4 py-3 md:flex-nowrap">
@@ -136,7 +143,7 @@ export default function Navbar(): ReactElement {
             </div>
           </div>
         </div>
-      </nav>
+      </motion.nav>
     </>
   );
 }

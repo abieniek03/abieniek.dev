@@ -1,9 +1,22 @@
+"use client";
+
 import { type ReactElement } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function HeroSection(): ReactElement {
   return (
-    <section className="mt-16 flex flex-col items-center justify-center gap-10 lg:mt-0 lg:h-screen lg:flex-row lg:justify-between">
+    <motion.section
+      initial={{ opacity: 0, y: 150 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{
+        type: "spring",
+        stiffness: 20,
+        damping: 10,
+      }}
+      viewport={{ once: true }}
+      className="mt-16 flex flex-col items-center justify-center gap-10 lg:mt-0 lg:h-screen lg:flex-row lg:justify-between"
+    >
       <div className="lg:w-[60%] lg:max-w-[700px]">
         <h1 className="mb-2 text-4xl font-bold sm:text-6xl md:mb-4 md:text-7xl">
           Cześć, jestem <br /> <span className="text-primary">Adrian.</span>
@@ -30,6 +43,6 @@ export default function HeroSection(): ReactElement {
         height={540}
         className="w-full rounded-lg lg:max-w-[40%]"
       />
-    </section>
+    </motion.section>
   );
 }
