@@ -10,7 +10,7 @@ const font = Poppins({ subsets: ["latin"], weight: ["400", "600", "700"] });
 export const metadata: Metadata = {
   title: "Adrian Bieniek - web developer",
   description:
-    "Na codzień zajmuję się web developmentem. Studiuję intormatykę. W wolnym czasie rozwijam się, a także dzielę się swoją wiedzą i doświadczeniem. Prowadzę bloga i kanał na YouTube.",
+    "Na codzień zajmuję się web developerem. Studiuję informatykę. W wolnym czasie rozwijam się, a także dzielę się swoją wiedzą i doświadczeniem. Prowadzę bloga i kanał na YouTube.",
 };
 
 export default function RootLayout({
