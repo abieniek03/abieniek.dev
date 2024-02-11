@@ -1,8 +1,5 @@
 import { type ReactElement } from "react";
 import Image from "next/image";
-import Link from "next/link";
-
-import Button from "@/components/Button";
 
 export default function HeroSection(): ReactElement {
   return (
@@ -17,18 +14,13 @@ export default function HeroSection(): ReactElement {
           Prowadzę bloga i tworzę treści na YouTube.
         </p>
         <div className="flex flex-col gap-3 md:flex-row">
-          <a href="#kontakt">
-            <Button type="primary">
-              <i className="ri-mail-send-line mr-2" />
-              Skontaktuj się ze mną
-            </Button>
+          <a
+            href="#kontakt"
+            className=" font-semibold text-primary transition-all duration-300 hover:underline"
+          >
+            <i className="ri-mail-send-line mr-2" />
+            Skontaktuj się ze mną
           </a>
-          <Link href="/blog">
-            <Button type="secondary">
-              <i className="ri-news-line mr-2" />
-              Przejdź na bloga
-            </Button>
-          </Link>
         </div>
       </div>
       <Image
