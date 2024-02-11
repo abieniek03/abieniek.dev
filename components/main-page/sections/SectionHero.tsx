@@ -4,7 +4,7 @@ import { type ReactElement } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-export default function HeroSection(): ReactElement {
+export default function SectionHero(): ReactElement {
   return (
     <motion.section
       initial={{ opacity: 0, y: 150 }}
@@ -23,8 +23,8 @@ export default function HeroSection(): ReactElement {
         </h1>
         <p className="mb-4 md:text-lg lg:mb-8">
           Na codzień zajmuję się web developmentem. Studiuję intormatykę.
-          W&nbsp;wolnym czasie rozwijam się i dzielę się swoją wiedzą, i
-          doświadczeniem. Prowadzę bloga i tworzę treści na YouTube.
+          W&nbsp;wolnym czasie rozwijam się, a także dzielę się swoją wiedzą i
+          doświadczeniem. Prowadzę bloga i kanał na YouTube.
         </p>
         <div className="flex flex-col gap-3 md:flex-row">
           <a
