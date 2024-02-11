@@ -15,9 +15,9 @@ export default function SectionHero(): ReactElement {
         damping: 10,
       }}
       viewport={{ once: true }}
-      className="mt-16 flex flex-col items-center justify-center gap-10 lg:mt-0 lg:h-screen lg:flex-row lg:justify-between"
+      className="mt-16 flex h-screen flex-col gap-y-10 lg:mt-0 lg:flex-row lg:items-center lg:gap-x-0"
     >
-      <div className="lg:w-[60%] lg:max-w-[700px]">
+      <div className="lg:max-w-[640px]">
         <h1 className="mb-2 text-4xl font-bold sm:text-6xl md:mb-4 md:text-7xl">
           Cześć, jestem <br /> <span className="text-primary">Adrian.</span>
         </h1>
@@ -36,13 +36,16 @@ export default function SectionHero(): ReactElement {
           </a>
         </div>
       </div>
-      <Image
-        src="/hero-image.jpg"
-        alt=""
-        width={540}
-        height={540}
-        className="w-full rounded-lg lg:max-w-[40%]"
-      />
+
+      <motion.div className="w-full lg:max-w-[40%]">
+        <Image
+          src="/hero-image.jpg"
+          alt=""
+          width={540}
+          height={540}
+          className="w-full rounded-lg"
+        />
+      </motion.div>
     </motion.section>
   );
 }

@@ -1,11 +1,15 @@
 import { type ReactElement } from "react";
 
-import HeroSection from "@/components/main-page/sections/SectionHero";
+import SectionHero from "@/components/main-page/sections/SectionHero";
+import SectionAbout from "@/components/main-page/sections/SectionAbout";
 
 export default function MainPage(): ReactElement {
   return (
     <>
-      <HeroSection />
+      <SectionHero />
+      <main className="flex flex-col gap-y-10">
+        <SectionAbout />
+      </main>
     </>
   );
 }

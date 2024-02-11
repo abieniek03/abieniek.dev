@@ -77,7 +77,7 @@ export default function Navbar(): ReactElement {
           stiffness: 80,
           damping: 20,
         }}
-        className={`fixed w-full ${navbarFixed && !menuIsOpen ? "bg-light/95 backdrop-blur supports-[backdrop-filter]:bg-light/75 dark:bg-dark/95 dark:supports-[backdrop-filter]:bg-dark/75" : ""} ${menuIsOpen ? "bg-light dark:bg-dark" : ""}`}
+        className={`fixed z-40 w-full ${navbarFixed && !menuIsOpen ? "bg-light/95 backdrop-blur supports-[backdrop-filter]:bg-light/75 dark:bg-dark/95 dark:supports-[backdrop-filter]:bg-dark/75" : ""} ${menuIsOpen ? "bg-light dark:bg-dark" : ""}`}
       >
         <div className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between px-4 py-3 md:flex-nowrap">
           {pathname === "/" ? (
