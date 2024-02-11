@@ -1,7 +1,14 @@
+import Navbar from "@/components/Navbar";
+
 export default function MainPageLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <>{children}</>;
+  return (
+    <>
+      <Navbar />
+      <div className="mx-auto max-w-screen-2xl p-8 lg:py-0">{children}</div>
+    </>
+  );
 }

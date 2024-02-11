@@ -1,11 +1,11 @@
 import { type ReactElement } from "react";
 
-import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/main-page/sections/Hero";
 
 export default function MainPage(): ReactElement {
   return (
     <>
-      <Navbar />
+      <HeroSection />
     </>
   );
 }
