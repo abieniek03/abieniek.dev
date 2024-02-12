@@ -22,9 +22,9 @@ export default function SectionHero(): ReactElement {
           Cześć, jestem <br /> <span className="text-primary">Adrian.</span>
         </h1>
         <p className="mb-4 md:text-lg lg:mb-8">
-          Na codzień zajmuję się web developerem. Studiuję informatykę.
-          W&nbsp;wolnym czasie rozwijam się, a także dzielę się swoją wiedzą i
-          doświadczeniem.
+          Na codzień zajmuję się tworzeniem stron i aplikacji internetowych.
+          Studiuję informatykę. W&nbsp;wolnym czasie rozwijam się, a także
+          dzielę się swoją wiedzą i doświadczeniem.
         </p>
         {/* //Prowadzę bloga i kanał na YouTube. */}
         <div className="flex flex-col gap-3 md:flex-row">
