@@ -34,18 +34,13 @@ const messages = {
 };
 
 const isEmailAllowed = (email: string) => {
-  const allowedDomains = [
-    "zbock.com",
-    "omeie.com",
-    "zslsz.com",
-    "nezid.com",
-    "grassdev.com",
-    "ikuromi.com",
-    "10minut.xyz",
-    "cazlg.com",
-    "milkcreeks.com",
-  ];
-  return !allowedDomains.some((domain) => email.endsWith(`@${domain}`));
+  const notAllowedDomains = JSON.parse(
+    process.env.NEXT_PUBLIC_NOT_ALLOWED_EMAIL_DOMAINS as string,
+  );
+
+  return !notAllowedDomains.some((domain: string) =>
+    email.endsWith(`@${domain}`),
+  );
 };
 
 export const contactFormSchema = z.object({
