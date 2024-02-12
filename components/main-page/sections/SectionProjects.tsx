@@ -2,7 +2,6 @@ import { gql } from "graphql-request";
 
 import SectionContainer from "./elements/SectionContainer";
 import SectionTitle from "./elements/SectionTitle";
-
 import ProjectItem from "../ProjectItem";
 
 import { gqlClient } from "@/utils/gqlClient";

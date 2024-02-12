@@ -1,5 +1,8 @@
+"use client";
+
 import { ReactElement } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 import { SiVercel } from "react-icons/si";
 
@@ -10,7 +13,17 @@ const handleCurrentYear = () => {
 
 export default function Footer(): ReactElement {
   return (
-    <footer className="mx-auto mt-36 flex flex-col items-center justify-center border-t px-4 py-10 text-dark dark:border-light/10 ">
+    <motion.footer
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{
+        type: "spring",
+        stiffness: 15,
+        damping: 5,
+      }}
+      viewport={{ once: true }}
+      className="mx-auto mt-36 flex flex-col items-center justify-center border-t px-4 py-10 text-dark dark:border-light/10 "
+    >
       <a
         href="https://vercel.com/"
         target="_blank"
@@ -28,6 +41,6 @@ export default function Footer(): ReactElement {
           Wszelkie prawa zastrzeżone - &copy;<span>{handleCurrentYear()}</span>
         </p>
       </div>
-    </footer>
+    </motion.footer>
   );
 }

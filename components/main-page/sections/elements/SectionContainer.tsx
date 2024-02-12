@@ -14,8 +14,6 @@ export default function SectionContainer({
 }: Readonly<ISectionContainer>): ReactElement {
   return (
     <motion.section
-      id={id}
-      className="scroll-mt-24"
       initial={{ opacity: 0, y: 150 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{
@@ -24,6 +22,8 @@ export default function SectionContainer({
         damping: 10,
       }}
       viewport={{ once: true }}
+      id={id}
+      className="scroll-mt-24"
     >
       {children}
     </motion.section>

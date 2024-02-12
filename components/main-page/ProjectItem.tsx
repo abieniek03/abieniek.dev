@@ -23,7 +23,6 @@ export default function ProjectItem({
 }: Readonly<IProjectItem>): ReactElement {
   return (
     <motion.div
-      className="flex flex-col gap-y-4 lg:flex-row lg:items-center lg:justify-between lg:gap-x-8 lg:gap-y-0"
       initial={{ opacity: 0, y: 150 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{
@@ -32,6 +31,7 @@ export default function ProjectItem({
         damping: 10,
       }}
       viewport={{ once: true }}
+      className="flex flex-col gap-y-4 lg:flex-row lg:items-center lg:justify-between lg:gap-x-8 lg:gap-y-0"
     >
       <Image
         src={imageUrl}
