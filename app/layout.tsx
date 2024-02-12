@@ -4,6 +4,8 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import "remixicon/fonts/remixicon.css";
 import NextThemeProvider from "@/hoc/NextThemeProvider";
+import { Analytics } from "@vercel/analytics/react";
+import CookieAlert from "@/components/CookieAlert";
 
 const font = Poppins({ subsets: ["latin"], weight: ["400", "600", "700"] });
 
@@ -24,6 +26,8 @@ export default function RootLayout({
         className={`${font.className} bg-light text-dark/80 dark:bg-dark dark:text-light`}
       >
         <NextThemeProvider>{children}</NextThemeProvider>
+        <Analytics />
+        <CookieAlert />
       </body>
     </html>
   );
