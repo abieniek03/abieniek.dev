@@ -29,7 +29,7 @@ export default async function SectionAbout() {
 
       <div
         dangerouslySetInnerHTML={convertToHTML(data.description)}
-        className="mx-auto max-w-5xl text-center"
+        className="mx-auto mt-8 max-w-5xl pr-2 md:pr-0 md:text-center"
       />
     </SectionContainer>
   );
