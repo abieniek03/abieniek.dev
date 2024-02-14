@@ -1,23 +1,54 @@
-import PostItem from "@/components/blog/PostItem";
-import SectionTitle from "@/components/main-page/sections/elements/SectionTitle";
-import { type ReactElement } from "react";
+import Image from "next/image";
 
-export default function BlogMainPage(): ReactElement {
+import SectionTitle from "@/components/main-page/sections/elements/SectionTitle";
+import PostItem, { IPostItem } from "@/components/blog/PostItem";
+import BlogHeader from "@/components/blog/BlogHeader";
+
+import { gql } from "graphql-request";
+import { gqlClient } from "@/utils/gqlClient";
+
+export default async function BlogMainPage() {
+  const query = gql`
+    {
+      allBlogPosts {
+        slug
+        title
+        description
+      }
+    }
+  `;
+
+  const response: any = await gqlClient.request(query);
+  // const { allBlogPosts } = response;
+  const allBlogPosts: any[] = [];
+
   return (
     <main className="flex h-screen flex-col items-center justify-center">
-      <header className="mb-10 w-full border-b py-10 text-center text-primary dark:border-light/10">
-        <h1 className="font-outline text-[128px] font-bold uppercase text-transparent md:text-[164px] lg:text-[196px]">
-          blog
-        </h1>
-        <p className="-mt-5 text-lg font-light md:text-xl lg:-mt-10 lg:text-2xl xl:text-3xl">
-          web development dla początkujących i&nbsp;nie&nbsp;tylko
-        </p>
-      </header>
+      <BlogHeader
+        title="Blog"
+        subtitle="web development dla początkujących i nie tylko"
+      />
       <div className="h-screen w-full">
-        <SectionTitle>Najnowosze posty</SectionTitle>
-        <div className="my-5">
-          <PostItem path="/" title="Tytuł" description="Opis postu" />
-        </div>
+        {allBlogPosts.length > 0 ? (
+          <div>
+            <SectionTitle>Najnowosze posty</SectionTitle>
+            <div className="my-10">
+              {allBlogPosts.map((el: IPostItem, index: number) => (
+                <PostItem
+                  key={index}
+                  slug={el.slug}
+                  title={el.title}
+                  description={el.description}
+                />
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div className="flex flex-col items-center justify-center ">
+            <Image src="/avatar-happy.png" alt="" width={200} height={200} />
+            <p className="text-xl font-semibold">Pierwszy post już niedługo.</p>
+          </div>
+        )}
       </div>
     </main>
   );
