@@ -1,17 +1,23 @@
+import PostItem from "@/components/blog/PostItem";
+import SectionTitle from "@/components/main-page/sections/elements/SectionTitle";
 import { type ReactElement } from "react";
-import Link from "next/link";
 
 export default function BlogMainPage(): ReactElement {
   return (
-    <main className="flex h-screen items-center justify-center">
-      <div className="text-center font-semibold">
-        <div className="mb-4">
-          <p className="mb-1 text-4xl">Strona w budowie...</p>
-          <p>Do zobaczenia niedługo!👋</p>
+    <main className="flex h-screen flex-col items-center justify-center">
+      <header className="mb-10 w-full border-b py-10 text-center text-primary dark:border-light/10">
+        <h1 className="font-outline text-[128px] font-bold uppercase text-transparent md:text-[164px] lg:text-[196px]">
+          blog
+        </h1>
+        <p className="-mt-5 text-lg font-light md:text-xl lg:-mt-10 lg:text-2xl xl:text-3xl">
+          web development dla początkujących i&nbsp;nie&nbsp;tylko
+        </p>
+      </header>
+      <div className="h-screen w-full">
+        <SectionTitle>Najnowosze posty</SectionTitle>
+        <div className="my-5">
+          <PostItem path="/" title="Tytuł" description="Opis postu" />
         </div>
-        <Link href="/" className="mt-2 text-sm  text-primary hover:underline">
-          Wróć na stronę główną
-        </Link>
       </div>
     </main>
   );

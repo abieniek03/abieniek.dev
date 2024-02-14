@@ -9,25 +9,14 @@ import Logo from "./Logo";
 import SwitchThemeButton from "./SwitchThemeButton";
 import { stylesNavbarLinkButton } from "@/app/styles";
 
-interface INavItems {
+export interface INavItem {
   path: string;
   label: string;
 }
 
-const navItems: INavItems[] = [
-  {
-    path: "/blog",
-    label: "Blog",
-  },
-  {
-    path: "#projekty",
-    label: "Projekty",
-  },
-  {
-    path: "#kontakt",
-    label: "Kontakt",
-  },
-];
+interface INavbar {
+  navItems: INavItem[];
+}
 
 const ScrollBar: FC = () => {
   const { scrollYProgress } = useScroll();
@@ -45,7 +34,7 @@ const ScrollBar: FC = () => {
   );
 };
 
-export default function Navbar(): ReactElement {
+export default function Navbar({ navItems }: INavbar): ReactElement {
   const pathname = usePathname();
 
   const [navbarFixed, setNavbarFixed] = useState<boolean>(false);
@@ -95,13 +84,13 @@ export default function Navbar(): ReactElement {
             } order-last mt-2 h-[calc(100vh-60px)] w-full items-center justify-center border-t dark:border-light/10 md:order-none md:mt-0 md:flex md:h-auto md:border-none`}
           >
             <ul className="mt-2 flex h-full w-full flex-col gap-2 md:mt-0 md:flex-row md:justify-center md:gap-5">
-              {navItems.map((el, index) => (
+              {navItems.map((el: INavItem, index: number) => (
                 <li
                   key={index}
                   className="cursor-pointer py-2 font-semibold hover:text-primary md:py-0 md:text-sm"
                   onClick={() => menuIsOpen && setMenuIsOpen(false)}
                 >
-                  {el.path[0] === "#" ? (
+                  {el.path[0] === "/" ? (
                     <Link href={el.path}>{el.label}</Link>
                   ) : (
                     <a href={el.path}>{el.label}</a>
