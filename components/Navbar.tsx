@@ -14,9 +14,24 @@ export interface INavItem {
   label: string;
 }
 
-interface INavbar {
-  navItems: INavItem[];
-}
+const navItems: INavItem[] = [
+  {
+    path: "/",
+    label: "Strona główna",
+  },
+  {
+    path: "/blog",
+    label: "Blog",
+  },
+  {
+    path: "#projekty",
+    label: "Projekty",
+  },
+  {
+    path: "#kontakt",
+    label: "Kontakt",
+  },
+];
 
 const ScrollBar: FC = () => {
   const { scrollYProgress } = useScroll();
@@ -34,8 +49,10 @@ const ScrollBar: FC = () => {
   );
 };
 
-export default function Navbar({ navItems }: INavbar): ReactElement {
+export default function Navbar(): ReactElement {
   const pathname = usePathname();
+  const mainPage = pathname.split("/")[1] === "";
+  const currentPath = `/${pathname.split("/")[1]}`;
 
   const [navbarFixed, setNavbarFixed] = useState<boolean>(false);
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false);
@@ -59,22 +76,22 @@ export default function Navbar({ navItems }: INavbar): ReactElement {
     <>
       <ScrollBar />
       <motion.nav
-        initial={{ y: -100, opacity: 0 }}
+        initial={{ y: mainPage ? -100 : 0, opacity: mainPage ? 0 : 1 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{
           type: "spring",
           stiffness: 80,
           damping: 20,
         }}
-        className={`fixed z-40 w-full ${navbarFixed && !menuIsOpen ? "bg-light/95 backdrop-blur supports-[backdrop-filter]:bg-light/75 dark:bg-dark/95 dark:supports-[backdrop-filter]:bg-dark/75" : ""} ${menuIsOpen ? "bg-light dark:bg-dark" : ""}`}
+        className={`fixed top-0 z-40 w-full ${navbarFixed && !menuIsOpen ? "bg-light/95 backdrop-blur supports-[backdrop-filter]:bg-light/75 dark:bg-dark/95 dark:supports-[backdrop-filter]:bg-dark/75" : ""} ${menuIsOpen ? "bg-light dark:bg-dark" : ""}`}
       >
         <div className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between px-4 py-3 md:flex-nowrap">
-          {pathname === "/" ? (
+          {pathname.split("/")[1] === "" ? (
             <a href="#">
               <Logo />
             </a>
           ) : (
-            <Link href="/">
+            <Link href={`/${pathname.split("/")[1]}`}>
               <Logo />
             </Link>
           )}
@@ -83,7 +100,7 @@ export default function Navbar({ navItems }: INavbar): ReactElement {
               menuIsOpen ? "flex" : "hidden"
             } order-last mt-2 h-[calc(100vh-60px)] w-full items-center justify-center border-t dark:border-light/10 md:order-none md:mt-0 md:flex md:h-auto md:border-none`}
           >
-            <ul className="mt-2 flex h-full w-full flex-col gap-2 md:mt-0 md:flex-row md:justify-center md:gap-5">
+            <ul className="mt-2 flex h-full w-full flex-col gap-2 md:mt-0 md:flex-row md:justify-center md:gap-6 lg:gap-12">
               {navItems.map((el: INavItem, index: number) => (
                 <li
                   key={index}
@@ -91,9 +108,21 @@ export default function Navbar({ navItems }: INavbar): ReactElement {
                   onClick={() => menuIsOpen && setMenuIsOpen(false)}
                 >
                   {el.path[0] === "/" ? (
-                    <Link href={el.path}>{el.label}</Link>
+                    <Link
+                      href={el.path}
+                      className={currentPath === el.path ? "text-primary" : ""}
+                    >
+                      {el.label}
+                    </Link>
                   ) : (
-                    <a href={el.path}>{el.label}</a>
+                    <a
+                      href={
+                        (mainPage ? "" : process.env.NEXT_PUBLIC_DOMAIN_NAME) +
+                        el.path
+                      }
+                    >
+                      {el.label}
+                    </a>
                   )}
                 </li>
               ))}

@@ -2,6 +2,7 @@
 
 import { ReactElement } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 
 import { SiVercel } from "react-icons/si";
@@ -12,10 +13,13 @@ const handleCurrentYear = () => {
 };
 
 export default function Footer(): ReactElement {
+  const pathname = usePathname();
+  const mainPage = pathname.split("/")[1] === "";
+
   return (
     <motion.footer
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
+      initial={{ y: mainPage ? -100 : 0, opacity: mainPage ? 0 : 1 }}
+      animate={{ y: 0, opacity: 1 }}
       transition={{
         type: "spring",
         stiffness: 15,
