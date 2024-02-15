@@ -19,8 +19,8 @@ export default async function BlogMainPage() {
   `;
 
   const response: any = await gqlClient.request(query);
-  // const { allBlogPosts } = response;
-  const allBlogPosts: any[] = [];
+  const { allBlogPosts } = response;
+  // const allBlogPosts: any[] = [];
 
   return (
     <main className="flex h-screen flex-col items-center justify-center">

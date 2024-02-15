@@ -85,7 +85,7 @@ export default function Navbar(): ReactElement {
         }}
         className={`fixed top-0 z-40 w-full ${navbarFixed && !menuIsOpen ? "bg-light/95 backdrop-blur supports-[backdrop-filter]:bg-light/75 dark:bg-dark/95 dark:supports-[backdrop-filter]:bg-dark/75" : ""} ${menuIsOpen ? "bg-light dark:bg-dark" : ""}`}
       >
-        <div className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between px-4 py-3 md:flex-nowrap">
+        <div className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between px-6 py-3 md:flex-nowrap">
           {pathname.split("/")[1] === "" ? (
             <a href="#">
               <Logo />
