@@ -15,7 +15,7 @@ export default function SectionHero(): ReactElement {
         damping: 10,
       }}
       viewport={{ once: true }}
-      className="mt-16 flex min-h-screen flex-col gap-y-10 lg:mt-0 lg:flex-row lg:items-center lg:gap-x-0"
+      className="mt-8 flex min-h-screen flex-col justify-center gap-y-10 sm:mt-20 md:mt-28 lg:mt-0 lg:flex-row lg:items-center lg:gap-x-8"
     >
       <div className="lg:max-w-[640px]">
         <h1 className="mb-2 text-4xl font-bold sm:text-6xl md:mb-4 md:text-7xl">

@@ -7,7 +7,10 @@ import NextThemeProvider from "@/hoc/NextThemeProvider";
 import { Analytics } from "@vercel/analytics/react";
 import CookieAlert from "@/components/CookieAlert";
 
-const font = Poppins({ subsets: ["latin"], weight: ["400", "600", "700"] });
+const font = Poppins({
+  subsets: ["latin"],
+  weight: ["200", "400", "600", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Adrian Bieniek - Web developer",
