@@ -3,7 +3,7 @@
 import Image, { ImageProps } from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import PostSectionTitle from "./blog/PostSectionTitle";
 
@@ -23,8 +23,14 @@ const components = {
   ),
   p: (props: any) => <p className="mb-2">{props.children}</p>,
   code: (props: any) => (
-    <div className="mt-4">
-      <SyntaxHighlighter language="html" style={atomDark}>
+    <div className="my-4 lg:my-8">
+      <SyntaxHighlighter
+        language="tsx"
+        style={materialDark}
+        customStyle={{
+          borderRadius: 5,
+        }}
+      >
         {props.children}
       </SyntaxHighlighter>
     </div>
