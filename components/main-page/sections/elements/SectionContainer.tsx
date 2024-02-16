@@ -23,7 +23,7 @@ export default function SectionContainer({
       }}
       viewport={{ once: true }}
       id={id}
-      className="scroll-mt-24"
+      className="scroll-mt-24 last:mb-16"
     >
       {children}
     </motion.section>
