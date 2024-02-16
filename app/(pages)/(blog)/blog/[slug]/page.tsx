@@ -5,8 +5,7 @@ import CustomMDX from "@/components/custom-mdx";
 
 import { gql } from "graphql-request";
 import { gqlClient } from "@/utils/gqlClient";
-import { formatDistanceToNow, parseISO } from "date-fns";
-import { pl } from "date-fns/locale";
+import { formattedPostDate } from "@/utils/formattedPostDate";
 
 async function fetchData(slug: string) {
   const query = gql`
@@ -33,11 +32,6 @@ export default async function PostPage(request: IServerComponentProps) {
   const slug = request.params.slug;
 
   const blogPost = await fetchData(slug);
-
-  const formattedPostDate = (date: string) => {
-    const pardesDate = parseISO(date);
-    return formatDistanceToNow(pardesDate, { locale: pl, addSuffix: true });
-  };
 
   if (!blogPost) redirect("/not-found");
 

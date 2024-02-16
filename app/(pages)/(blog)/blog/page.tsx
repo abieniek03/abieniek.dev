@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import SectionTitle from "@/components/main-page/sections/elements/SectionTitle";
-import PostItem, { IPostItem } from "@/components/blog/PostItem";
+import PostItem from "@/components/blog/PostItem";
 import BlogHeader from "@/components/blog/BlogHeader";
 
 import { gql } from "graphql-request";
@@ -14,6 +14,7 @@ export default async function BlogMainPage() {
         slug
         title
         description
+        _createdAt
       }
     }
   `;
@@ -32,12 +33,13 @@ export default async function BlogMainPage() {
           <div>
             <SectionTitle>Najnowosze posty</SectionTitle>
             <div className="my-10">
-              {allBlogPosts.map((el: IPostItem, index: number) => (
+              {allBlogPosts.map((el: any, index: number) => (
                 <PostItem
                   key={index}
                   slug={el.slug}
                   title={el.title}
                   description={el.description}
+                  createdAt={el._createdAt}
                 />
               ))}
             </div>
