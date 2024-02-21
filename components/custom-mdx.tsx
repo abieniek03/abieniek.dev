@@ -9,9 +9,12 @@ import PostSectionTitle from "./blog/PostSectionTitle";
 
 const components = {
   h2: (props: any) => (
-    <PostSectionTitle {...props} className="large-text text-primary">
+    <PostSectionTitle {...props}>{props.children}</PostSectionTitle>
+  ),
+  h3: (props: any) => (
+    <h3 {...props} className="mb-2 mt-8 text-2xl font-semibold first:mt-0">
       {props.children}
-    </PostSectionTitle>
+    </h3>
   ),
   img: (props: any) => (
     <Image

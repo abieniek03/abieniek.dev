@@ -38,10 +38,10 @@ export default async function PostPage(request: IServerComponentProps) {
   return (
     <div className="mt-20 lg:mt-28">
       <div className="border-b pb-14 dark:border-light/10 lg:pb-20">
-        <h1 className="text-8xl font-semibold text-primary">
+        <h1 className="max-w-5xl text-8xl font-semibold leading-tight text-primary">
           {blogPost.title}
         </h1>
-        <p className="mt-5 text-sm opacity-25">
+        <p className="mt-10 text-sm opacity-25">
           {formattedPostDate(blogPost._createdAt)}
         </p>
       </div>
