@@ -15,7 +15,6 @@ export default function PostItem({
   description,
   createdAt,
 }: Readonly<IPostItem>): ReactElement {
-  console.log(slug);
   return (
     <Link
       href={`blog/${slug}`}
