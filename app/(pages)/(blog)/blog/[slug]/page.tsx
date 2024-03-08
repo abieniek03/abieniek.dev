@@ -1,11 +1,19 @@
 import { IServerComponentProps } from "@/types/types";
 import { redirect } from "next/navigation";
 
-import CustomMDX from "@/components/custom-mdx";
+import CustomMDX from "@/components/customMDX";
 
 import { gql } from "graphql-request";
 import { gqlClient } from "@/utils/gqlClient";
 import { formattedPostDate } from "@/utils/formattedPostDate";
+
+interface IBlogPostData {
+  title: string;
+  description: string;
+  article: string;
+  seoDescription: string;
+  _createdAt: string;
+}
 
 async function fetchData(slug: string) {
   const query = gql`
@@ -14,18 +22,23 @@ async function fetchData(slug: string) {
         title
         description
         article
+        seoDescription
         _createdAt
       }
     }
   `;
 
   const response: any = await gqlClient.request(query);
-  return response.blogPost;
+  const responseData: IBlogPostData = response.blogPost;
+  return responseData;
 }
 
 export async function generateMetadata(request: IServerComponentProps) {
   const blogPost = await fetchData(request.params.slug);
-  return { title: blogPost.title };
+  return {
+    title: blogPost.title,
+    description: blogPost.seoDescription,
+  };
 }
 
 export default async function PostPage(request: IServerComponentProps) {
