@@ -26,7 +26,7 @@ const components = {
   ),
   p: (props: any) => <p className="mb-2">{props.children}</p>,
   code: (props: any) => (
-    <div className="my-4 lg:my-8">
+    <div className="my-4 text-xs md:text-sm lg:my-8">
       <SyntaxHighlighter
         language="tsx"
         style={materialDark}

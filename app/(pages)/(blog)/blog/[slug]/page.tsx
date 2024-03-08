@@ -1,7 +1,7 @@
 import { IServerComponentProps } from "@/types/types";
 import { redirect } from "next/navigation";
 
-import CustomMDX from "@/components/custom-mdx";
+import CustomMDX from "@/components/customMDX";
 
 import { gql } from "graphql-request";
 import { gqlClient } from "@/utils/gqlClient";
