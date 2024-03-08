@@ -32,7 +32,7 @@ export default async function BlogMainPage() {
         {allBlogPosts.length > 0 ? (
           <div>
             <SectionTitle>Najnowosze posty</SectionTitle>
-            <div className="my-10">
+            <div className="my-10 flex flex-col gap-5">
               {allBlogPosts.map((el: any, index: number) => (
                 <PostItem
                   key={index}
