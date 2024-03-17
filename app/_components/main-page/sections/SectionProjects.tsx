@@ -4,7 +4,7 @@ import SectionContainer from "./elements/SectionContainer";
 import SectionTitle from "./elements/SectionTitle";
 import ProjectItem from "../ProjectItem";
 
-import { gqlClient } from "@/utils/gqlClient";
+import { gqlClient } from "@/app/_utils/gqlClient";
 
 export interface IProjectData {
   image: {

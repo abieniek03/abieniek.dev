@@ -4,9 +4,9 @@ import { type ReactElement, useState } from "react";
 
 import SectionContainer from "./elements/SectionContainer";
 import SectionTitle from "./elements/SectionTitle";
-import FormField from "@/components/form/FormField";
-import Button from "@/components/Button";
-import Alert from "@/components/Alert";
+import FormField from "@/app/_components/form/FormField";
+import Button from "@/app/_components/Button";
+import Alert from "@/app/_components/Alert";
 
 import { useForm, FormProvider } from "react-hook-form";
 import * as z from "zod";

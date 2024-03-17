@@ -1,6 +1,6 @@
 import { type ReactElement } from "react";
 import Link from "next/link";
-import { formattedPostDate } from "@/utils/formattedPostDate";
+import { formattedPostDate } from "@/app/_utils/formattedPostDate";
 
 export interface IPostItem {
   slug: string;
