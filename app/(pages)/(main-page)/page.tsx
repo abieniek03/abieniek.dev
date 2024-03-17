@@ -1,9 +1,9 @@
 import { type ReactElement } from "react";
 
-import SectionHero from "@/components/main-page/sections/SectionHero";
-import SectionAbout from "@/components/main-page/sections/SectionAbout";
-import SectionProjects from "@/components/main-page/sections/SectionProjects";
-import SectionContact from "@/components/main-page/sections/SectionContact";
+import SectionHero from "@/app/_components/main-page/sections/SectionHero";
+import SectionAbout from "@/app/_components/main-page/sections/SectionAbout";
+import SectionProjects from "@/app/_components/main-page/sections/SectionProjects";
+import SectionContact from "@/app/_components/main-page/sections/SectionContact";
 
 export default function MainPage(): ReactElement {
   return (

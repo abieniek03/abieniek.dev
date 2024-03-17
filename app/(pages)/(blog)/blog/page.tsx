@@ -1,10 +1,10 @@
 import Image from "next/image";
 
-import SectionTitle from "@/components/main-page/sections/elements/SectionTitle";
-import PostItem from "@/components/blog/PostItem";
+import SectionTitle from "@/app/_components/main-page/sections/elements/SectionTitle";
+import PostItem from "@/app/_components/blog/PostItem";
 
 import { gql } from "graphql-request";
-import { gqlClient } from "@/utils/gqlClient";
+import { gqlClient } from "@/app/_utils/gqlClient";
 
 export default async function BlogMainPage() {
   const query = gql`

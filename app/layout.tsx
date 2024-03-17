@@ -3,9 +3,9 @@ import type { ReactNode } from "react";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import "remixicon/fonts/remixicon.css";
-import NextThemeProvider from "@/hoc/NextThemeProvider";
+import NextThemeProvider from "@/app/_hoc/NextThemeProvider";
 import { Analytics } from "@vercel/analytics/react";
-import CookieAlert from "@/components/CookieAlert";
+import CookieAlert from "@/app/_components/CookieAlert";
 
 const font = Poppins({
   subsets: ["latin"],
