@@ -3,8 +3,8 @@ import { gql } from "graphql-request";
 import SectionContainer from "./elements/SectionContainer";
 import SectionTitle from "./elements/SectionTitle";
 
-import { gqlClient } from "@/utils/gqlClient";
-import { convertToHTML } from "@/utils/marked";
+import { gqlClient } from "@/app/_utils/gqlClient";
+import { convertToHTML } from "@/app/_utils/marked";
 interface IAboutData {
   title: string;
   description: string;

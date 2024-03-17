@@ -1,11 +1,11 @@
-import { IServerComponentProps } from "@/types/types";
+import { IServerComponentProps } from "@/app/_types/types";
 import { redirect } from "next/navigation";
 
-import CustomMDX from "@/components/customMDX";
+import CustomMDX from "@/app/_components/customMDX";
 
 import { gql } from "graphql-request";
-import { gqlClient } from "@/utils/gqlClient";
-import { formattedPostDate } from "@/utils/formattedPostDate";
+import { gqlClient } from "@/app/_utils/gqlClient";
+import { formattedPostDate } from "@/app/_utils/formattedPostDate";
 
 interface IBlogPostData {
   title: string;
