@@ -1,9 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
+
 import heroImage from "@/public/hero-image.jpg";
 
 export default function HomePage() {
   return (
-    <header className="mt-20 flex justify-between">
+    <header className="mt-10 flex justify-between">
       <div className="max-w-xl xl:mt-8">
         <h1 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl">
           Cześć, jestem Adrian!
@@ -15,12 +17,12 @@ export default function HomePage() {
           i&nbsp;doświadczeniem.
         </p>
 
-        <a
-          href="#kontakt"
+        <Link
+          href="/kontakt"
           className="font-semibold text-primary transition-all duration-300 hover:underline"
         >
           <i className="ri-mail-send-line mr-2"></i>Skontaktuj się ze mną
-        </a>
+        </Link>
       </div>
       <Image
         src={heroImage}

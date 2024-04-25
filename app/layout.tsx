@@ -19,7 +19,7 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="pl" className="scroll-smooth">
+    <html lang="pl" className="scroll-smooth accent-primary">
       <body className={`${font.className} bg-light-darker dark:bg-dark-darker`}>
         <NextThemeProvider>
           <MainLayout>{children}</MainLayout>

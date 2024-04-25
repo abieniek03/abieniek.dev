@@ -15,7 +15,7 @@ export default async function PrivatePolicyPage() {
   const { privatePolicy } = data;
 
   return (
-    <section className="mt-10">
+    <section>
       <h1 className="mb-8 text-3xl font-bold text-primary lg:text-4xl">
         Polityka prywatności
       </h1>

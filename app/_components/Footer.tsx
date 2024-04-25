@@ -4,7 +4,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="flex w-full flex-col items-center justify-between gap-2 border-t px-4 py-8 text-sm dark:border-light/10 sm:px-8 md:flex-row md:gap-0 md:px-16">
+    <footer className="mt-16 flex w-full flex-col items-center justify-between gap-2 border-t px-4 py-8 text-sm dark:border-light/10 sm:px-8 md:flex-row md:gap-0 md:px-16">
       <div className="flex gap-2 text-2xl">
         <a
           href="https://www.linkedin.com/in/adrian-bieniek/"
