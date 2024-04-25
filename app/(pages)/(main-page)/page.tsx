@@ -3,15 +3,16 @@ import heroImage from "@/public/hero-image.jpg";
 
 export default function HomePage() {
   return (
-    <header className="mt-10 flex justify-between">
+    <header className="mt-20 flex justify-between">
       <div className="max-w-xl xl:mt-8">
         <h1 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl">
           Cześć, jestem Adrian!
         </h1>
         <p className="mb-4">
-          Na codzień zajmuję się tworzeniem stron i aplikacji internetowych.
-          Studiuję&nbsp;informatykę i rozwijam się jako&nbsp;programista.
-          Chętnie dzielę&nbsp;się wiedzą i&nbsp;doświadczeniem.
+          Na codzień zajmuję się tworzeniem stron i&nbsp;aplikacji
+          internetowych. Studiuję&nbsp;informatykę i&nbsp;rozwijam się
+          jako&nbsp;programista. Chętnie dzielę&nbsp;się wiedzą
+          i&nbsp;doświadczeniem.
         </p>
 
         <a

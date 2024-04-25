@@ -151,7 +151,7 @@ export function Navbar() {
         transition={{
           duration: 0.2,
         }}
-        className="fixed inset-x-0 top-8 z-[5000] mx-auto flex w-full max-w-[90vw] items-center justify-between space-x-4 rounded-full border border-transparent bg-light-darker px-6 py-2 text-dark shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] dark:border-light/10 dark:bg-dark-darker dark:text-light sm:max-w-lg md:max-w-xl lg:max-w-3xl xl:max-w-5xl"
+        className="fixed inset-x-0 top-8 z-[5000] mx-auto flex w-full max-w-[95vw] items-center justify-between space-x-4 rounded-full border border-transparent bg-light-darker px-6 py-2 text-dark shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] dark:border-light/10 dark:bg-dark-darker dark:text-light sm:max-w-lg md:max-w-xl lg:max-w-3xl xl:max-w-5xl"
       >
         <div>
           {rootPage ? (

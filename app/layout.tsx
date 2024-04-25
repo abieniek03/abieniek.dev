@@ -6,8 +6,6 @@ import "remixicon/fonts/remixicon.css";
 
 import { NextThemeProvider } from "./_hoc/NextThemeButton";
 import { MainLayout } from "./_hoc/MainLayout";
-import { Navbar } from "./_components/Navbar";
-import { Footer } from "./_components/Footer";
 
 const font = Inter({ subsets: ["latin"] });
 
