@@ -5,6 +5,8 @@ import "./globals.css";
 import "remixicon/fonts/remixicon.css";
 
 import { NextThemeProvider } from "./_hoc/NextThemeButton";
+import { MainLayout } from "./_hoc/MainLayout";
+import { Navbar } from "./_components/Navbar";
 
 const font = Inter({ subsets: ["latin"] });
 
@@ -18,9 +20,14 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="pl">
-      <body className={font.className}>
-        <NextThemeProvider>{children}</NextThemeProvider>
+    <html lang="pl" className="scroll-smooth">
+      <body className={`${font.className} bg-light-darker dark:bg-dark-darker`}>
+        <NextThemeProvider>
+          <MainLayout>
+            <Navbar />
+            {children}
+          </MainLayout>
+        </NextThemeProvider>
       </body>
     </html>
   );

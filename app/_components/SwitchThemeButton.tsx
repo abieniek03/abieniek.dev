@@ -24,7 +24,7 @@ export function SwitchThemeButton() {
     <button onClick={switchTheme}>
       <i
         className={clsx(
-          "px-0.5 text-xl",
+          "px-0.5 text-xl opacity-65 hover:opacity-100",
           theme === "dark" ? "ri-moon-clear-line" : "ri-sun-line",
         )}
       />
