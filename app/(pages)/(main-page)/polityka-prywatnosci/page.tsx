@@ -2,6 +2,12 @@ import { gql } from "graphql-request";
 import { gqlClient } from "@/app/_utils/gqlClient";
 import { convertToHTML } from "@/app/_utils/marked";
 
+interface IPrivatePolicyData {
+  privatePolicy: {
+    content: string;
+  };
+}
+
 export default async function PrivatePolicyPage() {
   const query = gql`
     {
@@ -11,7 +17,7 @@ export default async function PrivatePolicyPage() {
     }
   `;
 
-  const data: any = await gqlClient.request(query);
+  const data: IPrivatePolicyData = await gqlClient.request(query);
   const { privatePolicy } = data;
 
   return (

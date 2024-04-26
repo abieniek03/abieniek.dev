@@ -6,6 +6,12 @@ import { convertToHTML } from "@/app/_utils/marked";
 
 import { PageTitle } from "@/app/_components/PageTitle";
 
+interface IAboutData {
+  about: {
+    content: string;
+  };
+}
+
 export default async function PrivatePolicyPage() {
   const query = gql`
     {
@@ -15,7 +21,7 @@ export default async function PrivatePolicyPage() {
     }
   `;
 
-  const data: any = await gqlClient.request(query);
+  const data: IAboutData = await gqlClient.request(query);
   const { about } = data;
 
   return (

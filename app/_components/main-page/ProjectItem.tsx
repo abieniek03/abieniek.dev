@@ -5,7 +5,6 @@ interface Props {
   title: string;
   description: string;
   dateStart: string;
-  dateEnd: string;
   inProgress: boolean;
 }
 
@@ -14,7 +13,6 @@ export function ProjectItem({
   title,
   description,
   dateStart,
-  dateEnd,
   inProgress,
 }: Props) {
   return (
