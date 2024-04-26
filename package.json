@@ -12,6 +12,7 @@
     "@headlessui/react": "^1.7.19",
     "@hookform/resolvers": "^3.3.4",
     "clsx": "^2.1.1",
+    "date-fns": "^3.6.0",
     "framer-motion": "^11.1.7",
     "graphql-request": "^6.1.0",
     "marked": "^12.0.2",
