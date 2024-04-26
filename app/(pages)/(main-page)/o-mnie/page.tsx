@@ -12,7 +12,7 @@ interface IAboutData {
   };
 }
 
-export default async function PrivatePolicyPage() {
+export default async function AboutPage() {
   const query = gql`
     {
       about {

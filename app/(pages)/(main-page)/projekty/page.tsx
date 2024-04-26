@@ -13,7 +13,11 @@ interface IProjectItem {
   repoLink: string;
 }
 
-export default async function PrivatePolicyPage() {
+interface IAllProjectsData {
+  allProjects: IProjectItem[];
+}
+
+export default async function ProjectsPage() {
   const query = gql`
     {
       allProjects(orderBy: dateStart_DESC) {
@@ -27,7 +31,7 @@ export default async function PrivatePolicyPage() {
     }
   `;
 
-  const data: any = await gqlClient.request(query);
+  const data: IAllProjectsData = await gqlClient.request(query);
   const { allProjects } = data;
 
   return (
