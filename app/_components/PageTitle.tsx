@@ -6,7 +6,7 @@ export function PageTitle({
   children: ReactNode;
 }>) {
   return (
-    <h1 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl">
+    <h1 className="mb-4 text-3xl font-bold md:text-4xl lg:mb-8 lg:text-5xl">
       {children}
     </h1>
   );
