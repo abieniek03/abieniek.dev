@@ -11,7 +11,7 @@ interface Props {
 export function BlogPost({ path, title, description, date }: Props) {
   return (
     <Link
-      href={path}
+      href={`/blog/${path}`}
       className="block cursor-pointer rounded-lg border p-4 text-sm transition-all duration-300 hover:bg-light-darker dark:border-light/10 dark:hover:bg-light-darker/5"
     >
       <span className="mb-2 text-xs opacity-75">
