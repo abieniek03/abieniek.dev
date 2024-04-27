@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         primary: "#067FB3",
+        // "primary-darker": "#026088",
         light: "#FFFFFF",
         "light-darker": "#FAFAFA",
         dark: "#18181B",
@@ -18,6 +19,7 @@ const config: Config = {
       },
     },
   },
+  darkMode: "class",
   plugins: [],
 };
 export default config;
