@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { gql } from "graphql-request";
 import { gqlClient } from "@/app/_utils/gqlClient";
 
@@ -15,6 +16,10 @@ interface IBlogPost {
 interface IAllBlogPostsData {
   allBlogPosts: IBlogPost[];
 }
+
+export const metadata: Metadata = {
+  title: "Blog",
+};
 
 export default async function BlogPage() {
   const query = gql`
