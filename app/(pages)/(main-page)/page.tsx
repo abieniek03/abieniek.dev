@@ -1,7 +1,4 @@
-import Image from "next/image";
 import Link from "next/link";
-
-import heroImage from "@/public/hero-image.jpg";
 
 export default function HomePage() {
   return (
@@ -24,13 +21,6 @@ export default function HomePage() {
           <i className="ri-mail-send-line mr-2"></i>Skontaktuj się ze mną
         </Link>
       </div>
-      <Image
-        src={heroImage}
-        alt=""
-        width={350}
-        height={350}
-        className=" hidden rotate-3 rounded-lg xl:block"
-      />
     </header>
   );
 }

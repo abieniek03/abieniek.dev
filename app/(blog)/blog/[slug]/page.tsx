@@ -1,7 +1,6 @@
 import { redirect } from "next/navigation";
 import { gql } from "graphql-request";
 import { gqlClient } from "@/app/_utils/gqlClient";
-
 import { IServerComponentProps } from "@/app/_types/types";
 import { formattedDate } from "@/app/_utils/formattedDate";
 
