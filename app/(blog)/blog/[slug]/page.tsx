@@ -34,6 +34,14 @@ async function fetchData(slug: string) {
   return responseData;
 }
 
+export async function generateMetadata(request: IServerComponentProps) {
+  const blogPost = await fetchData(request.params.slug);
+  return {
+    title: blogPost.title.split(".")[0],
+    description: blogPost.seoKeywords,
+  };
+}
+
 export default async function PostPage(request: IServerComponentProps) {
   const slug = request.params.slug;
 

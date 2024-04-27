@@ -10,7 +10,10 @@ import { MainLayout } from "./_hoc/MainLayout";
 const font = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Adrian Bieniek - Software developer",
+  title: {
+    template: "%s | Adrian Bieniek - Software developer",
+    default: "Adrian Bieniek - Software developer",
+  },
 };
 
 export default function RootLayout({

@@ -1,12 +1,17 @@
 import { gql } from "graphql-request";
 import { gqlClient } from "@/app/_utils/gqlClient";
 import { convertToHTML } from "@/app/_utils/marked";
+import { Metadata } from "next";
 
 interface IPrivatePolicyData {
   privatePolicy: {
     content: string;
   };
 }
+
+export const metadata: Metadata = {
+  title: "Polityka prywatności",
+};
 
 export default async function PrivatePolicyPage() {
   const query = gql`

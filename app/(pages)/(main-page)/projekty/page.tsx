@@ -1,3 +1,4 @@
+import { Metadata } from "next/types";
 import { gql } from "graphql-request";
 import { gqlClient } from "@/app/_utils/gqlClient";
 
@@ -16,6 +17,10 @@ interface IProjectItem {
 interface IAllProjectsData {
   allProjects: IProjectItem[];
 }
+
+export const metadata: Metadata = {
+  title: "Projekty",
+};
 
 export default async function ProjectsPage() {
   const query = gql`

@@ -1,3 +1,4 @@
+import { Metadata } from "next/types";
 import Image from "next/image";
 import heroImage from "@/public/hero-image.jpg";
 import { gql } from "graphql-request";
@@ -11,6 +12,10 @@ interface IAboutData {
     content: string;
   };
 }
+
+export const metadata: Metadata = {
+  title: "O mnie",
+};
 
 export default async function AboutPage() {
   const query = gql`
