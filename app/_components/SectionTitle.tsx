@@ -5,5 +5,5 @@ export function SectionTitle({
 }: Readonly<{
   children: ReactNode;
 }>) {
-  return <h2 className="mb-4 text-xl font-bold uppercase ">{children}</h2>;
+  return <h2 className="mb-4 text-xl font-bold uppercase">{children}</h2>;
 }

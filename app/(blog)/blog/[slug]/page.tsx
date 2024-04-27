@@ -4,9 +4,9 @@ import { gqlClient } from "@/app/_utils/gqlClient";
 
 import { IServerComponentProps } from "@/app/_types/types";
 import { formattedDate } from "@/app/_utils/formattedDate";
-import { convertToHTML } from "@/app/_utils/marked";
 
 import { TracingBeam } from "@/app/_components/TracingBeam";
+import { CustomMDX } from "@/app/_components/customMDX";
 
 interface IBlogPostData {
   title: string;
@@ -50,7 +50,7 @@ export default async function PostPage(request: IServerComponentProps) {
           </span>
           <h1 className="text-2xl font-bold lg:text-4xl">{blogPost.title}</h1>
         </div>
-        <div dangerouslySetInnerHTML={convertToHTML(blogPost.article)} />
+        <CustomMDX source={blogPost.article} />
       </TracingBeam>
     </section>
   );
