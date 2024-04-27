@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import headerImage from "@/public/header-image.png";
 
 export default function HomePage() {
   return (
@@ -25,7 +24,7 @@ export default function HomePage() {
       </div>
       <div className="-mt-10">
         <Image
-          src={headerImage}
+          src="/header-image.png"
           alt=""
           width={350}
           height={350}

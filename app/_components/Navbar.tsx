@@ -14,7 +14,6 @@ import { Transition, Dialog } from "@headlessui/react";
 import clsx from "clsx";
 
 import { SwitchThemeButton } from "./SwitchThemeButton";
-import avatar from "@/public/avatar.png";
 
 interface INavItem {
   label: string;
@@ -154,11 +153,23 @@ export function Navbar() {
         <div>
           {rootPage ? (
             <a href="#">
-              <Image src={avatar} alt="abieniek.dev" className="w-9" />
+              <Image
+                src="/avatar.png"
+                width={50}
+                height={50}
+                alt="abieniek.dev"
+                className="w-9"
+              />
             </a>
           ) : (
             <Link href="/">
-              <Image src={avatar} alt="abieniek.dev" className="w-9" />
+              <Image
+                src="/avatar.png"
+                width={50}
+                height={50}
+                alt="abieniek.dev"
+                className="w-9"
+              />
             </Link>
           )}
         </div>

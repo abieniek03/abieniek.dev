@@ -5,7 +5,6 @@ import { gqlClient } from "@/app/_utils/gqlClient";
 import { convertToHTML } from "@/app/_utils/marked";
 
 import { PageTitle } from "@/app/_components/PageTitle";
-import aboutImage from "@/public/about-image.jpg";
 
 interface IAboutData {
   about: {
@@ -38,7 +37,7 @@ export default async function AboutPage() {
         </div>
         <div className="sticky top-14 w-full max-w-72 xl:max-w-sm">
           <Image
-            src={aboutImage}
+            src="/about-image.jpg"
             alt=""
             width={350}
             height={350}
