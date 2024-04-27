@@ -124,14 +124,12 @@ export function Navbar() {
     if (typeof current === "number") {
       let direction = current! - scrollYProgress.getPrevious()!;
 
-      if (scrollYProgress.getPrevious()! > 0.05) {
+      if (scrollYProgress.getPrevious()! > 0.02) {
         setVisible(false);
-        if (scrollYProgress.get() < 0.1) {
-          if (direction < 0) {
-            setVisible(true);
-          } else {
-            setVisible(false);
-          }
+        if (direction < 0) {
+          setVisible(true);
+        } else {
+          setVisible(false);
         }
       }
     }
