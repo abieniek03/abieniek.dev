@@ -1,6 +1,5 @@
 import { Metadata } from "next/types";
 import Image from "next/image";
-import heroImage from "@/public/hero-image.jpg";
 import { gql } from "graphql-request";
 import { gqlClient } from "@/app/_utils/gqlClient";
 import { convertToHTML } from "@/app/_utils/marked";
@@ -38,7 +37,7 @@ export default async function AboutPage() {
         </div>
         <div className="sticky top-14 w-full max-w-72 xl:max-w-sm">
           <Image
-            src={heroImage}
+            src="/about-image.jpg"
             alt=""
             width={350}
             height={350}

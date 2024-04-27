@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function HomePage() {
   return (
@@ -20,6 +21,15 @@ export default function HomePage() {
         >
           <i className="ri-mail-send-line mr-2"></i>Skontaktuj się ze mną
         </Link>
+      </div>
+      <div className="-mt-10">
+        <Image
+          src="/header-image.png"
+          alt=""
+          width={350}
+          height={350}
+          className="hidden w-full rounded-full lg:block"
+        />
       </div>
     </header>
   );
