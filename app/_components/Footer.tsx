@@ -11,14 +11,14 @@ export function Footer() {
           target="_blank"
           className="opacity-60 hover:opacity-75"
         >
-          <i className="ri-linkedin-box-fill"></i>
+          <i className="ri-linkedin-box-fill" />
         </a>
         <a
           href="https://github.com/abieniek03"
           target="_blank"
           className="opacity-60 hover:opacity-75"
         >
-          <i className="ri-github-fill"></i>
+          <i className="ri-github-fill" />
         </a>
       </div>
       <div className="text-center opacity-50 md:text-right">

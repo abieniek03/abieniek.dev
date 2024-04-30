@@ -1,6 +1,6 @@
 export interface IServerComponentProps {
   params: {
-    slug: string;
+    [key: string]: string;
   };
   searchParams: {};
 }
