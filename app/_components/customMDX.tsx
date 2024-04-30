@@ -23,8 +23,8 @@ const components = {
   ),
   img: (props: any) => (
     <Image
-      width={500}
-      height={500}
+      width={750}
+      height={750}
       {...(props as ImageProps)}
       className="mx-auto my-8 w-full max-w-3xl rounded-md"
     />

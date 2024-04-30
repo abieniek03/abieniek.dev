@@ -6,6 +6,7 @@ import { PageTitle } from "@/app/_components/PageTitle";
 import { ProjectItem } from "@/app/_components/main-page/ProjectItem";
 
 interface IProjectItem {
+  slug: string;
   title: string;
   description: string;
   inProgress: boolean;
@@ -26,6 +27,7 @@ export default async function ProjectsPage() {
   const query = gql`
     {
       allProjects(orderBy: dateStart_DESC) {
+        slug
         title
         description
         inProgress
@@ -52,7 +54,7 @@ export default async function ProjectsPage() {
         {allProjects.map((el: IProjectItem, index: number) => (
           <ProjectItem
             key={index}
-            link={el.repoLink}
+            link={el.slug}
             title={el.title}
             description={el.description}
             dateStart={el.dateStart}
