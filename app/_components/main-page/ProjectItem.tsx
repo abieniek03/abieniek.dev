@@ -19,7 +19,7 @@ export function ProjectItem({
   return (
     <Link
       href={`/projekty/${link}`}
-      className="w-full cursor-pointer rounded-lg p-4 text-sm transition-all duration-300 hover:bg-light-darker dark:hover:bg-light-darker/5 lg:flex lg:gap-x-10"
+      className="flex w-full cursor-pointer flex-col rounded-lg p-4 text-sm transition-all duration-300 hover:bg-light-darker dark:hover:bg-light-darker/5 lg:flex-row lg:gap-x-10"
     >
       <div className="relative mb-2 w-full before:absolute before:-left-2 before:h-5 before:w-[2px] before:bg-primary lg:mb-0 lg:mt-1 lg:max-w-36">
         <span>{formattedDate(dateStart, "LLLL yyyy")}</span>
