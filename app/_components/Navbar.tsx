@@ -23,7 +23,7 @@ interface INavItem {
 const navItems = [
   { label: "Home", path: "/" },
   { label: "O mnie", path: "/o-mnie" },
-  { label: "Blog", path: "/blog" },
+  // { label: "Blog", path: "/blog" },
   { label: "Projekty", path: "/projekty" },
   { label: "Kontakt", path: "/kontakt" },
 ];

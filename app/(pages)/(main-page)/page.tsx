@@ -80,15 +80,17 @@ export default async function HomePage() {
         </div>
       </header>
       <div className="mt-16 flex flex-col gap-10">
-        <section>
-          <SectionTitle>Najnowszy post</SectionTitle>
-          <BlogPost
-            path={blogPostLatest.slug}
-            title={blogPostLatest.title}
-            description={blogPostLatest.description}
-            date={blogPostLatest._createdAt}
-          />
-        </section>
+        {/* {blogPostLatest && (
+          <section>
+            <SectionTitle>Najnowszy post</SectionTitle>
+            <BlogPost
+              path={blogPostLatest.slug}
+              title={blogPostLatest.title}
+              description={blogPostLatest.description}
+              date={blogPostLatest._createdAt}
+            />
+          </section>
+        )} */}
         <section>
           <SectionTitle>Najnowszy projekt</SectionTitle>
           <ProjectItem
