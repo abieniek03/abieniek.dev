@@ -4,7 +4,6 @@ import { gqlClient } from "@/app/_utils/gqlClient";
 import { IServerComponentProps } from "@/app/_types/types";
 import { formattedDate } from "@/app/_utils/formattedDate";
 
-import { TracingBeam } from "@/app/_components/TracingBeam";
 import { CustomMDX } from "@/app/_components/customMDX";
 
 interface ITeamMate {
@@ -63,73 +62,71 @@ export default async function ProjectPage(request: IServerComponentProps) {
 
   return (
     <section className="mx-auto max-w-2xl">
-      <TracingBeam>
-        <div className="mb-8 border-b pb-8 dark:border-light/10">
-          <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold lg:text-4xl">{project.title}</h1>
-            <div className="flex items-center gap-2 text-2xl">
-              <a
-                href={project.repoLink}
-                target="_blank"
-                className="opacity-60 hover:opacity-75"
-              >
-                <i className="ri-github-fill" />
-              </a>
-              <a
-                href={project.demoLink}
-                target="_blank"
-                className="opacity-60 hover:opacity-75"
-              >
-                <i className="ri-external-link-line" />
-              </a>
-            </div>
+      <div className="mb-8 border-b pb-8 dark:border-light/10">
+        <div className="flex items-center justify-between">
+          <h1 className="text-2xl font-bold lg:text-4xl">{project.title}</h1>
+          <div className="flex items-center gap-2 text-2xl">
+            <a
+              href={project.repoLink}
+              target="_blank"
+              className="opacity-60 hover:opacity-75"
+            >
+              <i className="ri-github-fill" />
+            </a>
+            <a
+              href={project.demoLink}
+              target="_blank"
+              className="opacity-60 hover:opacity-75"
+            >
+              <i className="ri-external-link-line" />
+            </a>
           </div>
-          {project.inProgress && (
-            <span className="text-xs font-bold uppercase text-primary">
-              in progress
-            </span>
-          )}
+        </div>
+        {project.inProgress && (
+          <span className="text-xs font-bold uppercase text-primary">
+            in progress
+          </span>
+        )}
 
-          <div className="mt-2 text-sm opacity-75">
-            <p className="mb-4">{project.description}</p>
+        <div className="mt-2 text-sm opacity-75">
+          <p className="mb-4">{project.description}</p>
+          <p>
+            Rozpoczęcie:{" "}
+            <span>{formattedDate(project.dateStart, "LLLL yyyy")}</span>
+          </p>
+          {project.dateEnd && (
             <p>
-              Rozpoczęcie:{" "}
-              <span>{formattedDate(project.dateStart, "LLLL yyyy")}</span>
+              Zakończenie:{" "}
+              <span>{formattedDate(project.dateEnd, "LLLL yyyy")}</span>
             </p>
-            {project.dateEnd && (
-              <p>
-                Zakończenie:{" "}
-                <span>{formattedDate(project.dateEnd, "LLLL yyyy")}</span>
-              </p>
-            )}
-          </div>
-          {project.team && (
-            <div className="mt-4 text-sm">
-              <p className="mb-1 font-semibold">Zespół</p>
-              <ul className="ml-4 list-disc">
-                {project.team.map((el: ITeamMate, index: number) => (
-                  <li key={index}>
-                    <a
-                      href={el.github}
-                      rel="noopener"
-                      target="_blank"
-                      className="text-primary underline"
-                    >
-                      {el.name}
-                    </a>{" "}
-                    - {el.role}
-                  </li>
-                ))}
-              </ul>
-            </div>
           )}
         </div>
-        {project.article ? (
-          <CustomMDX source={project.article} />
-        ) : (
-          <p className="mt-8">Opis w przygotowaniu...</p>
+        {project.team && (
+          <div className="mt-4 text-sm">
+            <p className="mb-1 font-semibold">Zespół</p>
+            <ul className="ml-4 list-disc">
+              {project.team.map((el: ITeamMate, index: number) => (
+                <li key={index}>
+                  <a
+                    href={el.github}
+                    rel="noopener"
+                    target="_blank"
+                    className="text-primary underline"
+                  >
+                    {el.name}
+                  </a>{" "}
+                  - {el.role}
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
-      </TracingBeam>
+      </div>
+      {project.article ? (
+        <CustomMDX source={project.article} />
+      ) : (
+        <p className="mt-8">Opis w przygotowaniu...</p>
+      )}
     </section>
   );
 }
