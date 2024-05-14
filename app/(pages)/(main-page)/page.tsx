@@ -57,10 +57,9 @@ export default async function HomePage() {
             Cześć, jestem Adrian!
           </h1>
           <p className="mb-4">
-            Na codzień zajmuję się tworzeniem stron i&nbsp;aplikacji
-            internetowych. Studiuję&nbsp;informatykę i&nbsp;rozwijam się
-            jako&nbsp;programista. Chętnie dzielę&nbsp;się wiedzą
-            i&nbsp;doświadczeniem.
+            Na codzień zajmuję się tworzeniem stron i&nbsp;aplikacji. Zarówno po
+            stronie frontendu, jak i backendu. Studiuję&nbsp;informatykę i
+            ciągle się rozwijam.
           </p>
 
           <Link
@@ -80,16 +79,18 @@ export default async function HomePage() {
           />
         </div>
       </header>
-      <div className="mt-16 flex  flex-col gap-10">
-        <section>
-          <SectionTitle>Najnowszy post</SectionTitle>
-          <BlogPost
-            path={blogPostLatest.slug}
-            title={blogPostLatest.title}
-            description={blogPostLatest.description}
-            date={blogPostLatest._createdAt}
-          />
-        </section>
+      <div className="mt-16 flex flex-col gap-10">
+        {/* {blogPostLatest && (
+          <section>
+            <SectionTitle>Najnowszy post</SectionTitle>
+            <BlogPost
+              path={blogPostLatest.slug}
+              title={blogPostLatest.title}
+              description={blogPostLatest.description}
+              date={blogPostLatest._createdAt}
+            />
+          </section>
+        )} */}
         <section>
           <SectionTitle>Najnowszy projekt</SectionTitle>
           <ProjectItem

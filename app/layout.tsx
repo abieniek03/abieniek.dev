@@ -16,6 +16,8 @@ export const metadata: Metadata = {
     template: "%s | Adrian Bieniek - Software developer",
     default: "Adrian Bieniek - Software developer",
   },
+  description:
+    "Cześć, jestem Adrian! Na codzień zajmuję się tworzeniem stron i&nbsp;aplikacji. Zarówno po stronie frontendu, jak i backendu. Studiuję&nbsp;informatykę i ∂ciągle się rozwijam.",
 };
 
 export default function RootLayout({
