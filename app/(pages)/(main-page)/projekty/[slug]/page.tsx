@@ -66,20 +66,24 @@ export default async function ProjectPage(request: IServerComponentProps) {
         <div className="flex items-center justify-between">
           <h1 className="text-2xl font-bold lg:text-4xl">{project.title}</h1>
           <div className="flex items-center gap-2 text-2xl">
-            <a
-              href={project.repoLink}
-              target="_blank"
-              className="opacity-60 hover:opacity-75"
-            >
-              <i className="ri-github-fill" />
-            </a>
-            <a
-              href={project.demoLink}
-              target="_blank"
-              className="opacity-60 hover:opacity-75"
-            >
-              <i className="ri-external-link-line" />
-            </a>
+            {project.repoLink && (
+              <a
+                href={project.repoLink}
+                target="_blank"
+                className="opacity-60 hover:opacity-75"
+              >
+                <i className="ri-github-fill" />
+              </a>
+            )}
+            {project.demoLink && (
+              <a
+                href={project.demoLink}
+                target="_blank"
+                className="opacity-60 hover:opacity-75"
+              >
+                <i className="ri-external-link-line" />
+              </a>
+            )}
           </div>
         </div>
         {project.inProgress && (
