@@ -187,7 +187,7 @@ export function Navbar() {
             >
               {el.label}
               {pathname.split("/")[1] === el.path.slice(1) && (
-                <span className="absolute inset-x-0 -bottom-3.5 mx-auto h-px w-full bg-gradient-to-r from-transparent via-blue-500  to-transparent" />
+                <span className="absolute inset-x-0 -bottom-4 mx-auto h-px w-full bg-gradient-to-r from-transparent via-blue-500  to-transparent" />
               )}
             </Link>
           ))}
